@@ -8,6 +8,6 @@ export const fetchJsonData = async <T>(url: string): Promise<T> => {
 }
 
 const localServerUrl = 'http://localhost:5081'
-const azureServerUrl = 'http://mjg-reise-app-v2.azurewebsites.net'
+const azureServerUrl = 'https://mjg-reise-app-v2.azurewebsites.net'
 export const serverUrl =
   process.env.NODE_ENV === 'development' ? localServerUrl : azureServerUrl

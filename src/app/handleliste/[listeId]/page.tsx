@@ -20,7 +20,9 @@ interface HandlelisteItems {
 
 const getData = async (listeId: string): Promise<Handleliste> => {
   try {
-    const res = await fetch(`${serverUrl}/Handleliste/${listeId}`)
+    const res = await fetch(`${serverUrl}/Handleliste/${listeId}`, {
+      cache: 'no-store',
+    })
     return res.json()
   } catch {
     // This will activate the closest `error.js` Error Boundary

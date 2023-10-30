@@ -35,7 +35,7 @@ const AwaitableComponent = async (props: {
 }): Promise<React.JSX.Element> => {
   const data = await getData(props.listeId)
   return (
-    <div style={{ margin: '1rem', fontSize: '2rem' }}>
+    <div style={{ padding: '1rem', fontSize: '2rem', width: '100%' }}>
       {data.items.map((listItem) => {
         return <ListItem key={listItem.id} item={listItem} />
       })}

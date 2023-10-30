@@ -31,26 +31,28 @@ export default function NewItemForm(): JSX.Element {
   }
 
   return (
-    <div style={{ display: 'flex', gap: '0.5rem', marginTop: '1rem' }}>
+    <div>
+      <div style={{ display: 'flex', gap: '0.5rem', marginTop: '1rem' }}>
+        <input
+          autoFocus
+          ref={inputRef}
+          value={textValue}
+          onKeyDown={(event) => {
+            if (event.key === 'Enter') {
+              postData()
+            }
+          }}
+          onChange={(event) => setTextValue(event.target.value)}
+        />
+        <button
+          disabled={isSaving}
+          style={{ padding: '0.5rem' }}
+          onClick={postData}
+        >
+          Legg til
+        </button>
+      </div>
       {isSaving && <div>Lagrer...</div>}
-      <input
-        autoFocus
-        ref={inputRef}
-        value={textValue}
-        onKeyDown={(event) => {
-          if (event.key === 'Enter') {
-            postData()
-          }
-        }}
-        onChange={(event) => setTextValue(event.target.value)}
-      />
-      <button
-        disabled={isSaving}
-        style={{ padding: '0.5rem' }}
-        onClick={postData}
-      >
-        Lagre
-      </button>
     </div>
   )
 }

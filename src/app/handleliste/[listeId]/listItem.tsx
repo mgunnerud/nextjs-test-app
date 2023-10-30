@@ -1,15 +1,14 @@
 'use client'
 
 import { serverUrl } from '@/utils/fetchUtils'
-import { useParams, useRouter } from 'next/navigation'
+import { useParams } from 'next/navigation'
 import { useState } from 'react'
 
 interface ListItemProps {
   item: any
 }
 
-export default ({ item }: ListItemProps): JSX.Element => {
-  const router = useRouter()
+export default function ListItem({ item }: ListItemProps): JSX.Element {
   const params = useParams()
   const [isError, setIsError] = useState<boolean>(false)
   const [isChecked, setIsChecked] = useState<boolean>(!!item.completedDate)

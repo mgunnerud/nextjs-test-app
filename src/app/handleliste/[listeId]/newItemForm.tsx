@@ -4,7 +4,7 @@ import { serverUrl } from '@/utils/fetchUtils'
 import { useRef, useState } from 'react'
 import { useParams, useRouter } from 'next/navigation'
 
-export default (): JSX.Element => {
+export default function NewItemForm(): JSX.Element {
   const router = useRouter()
   const params = useParams()
   const inputRef = useRef<HTMLInputElement>(null)

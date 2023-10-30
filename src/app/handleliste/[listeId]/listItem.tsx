@@ -41,14 +41,10 @@ export default function ListItem({ item }: ListItemProps): JSX.Element {
       />
       <label
         htmlFor={item.guid}
-        style={
-          isChecked
-            ? {
-                textDecoration: 'line-through',
-                opacity: 0.4,
-              }
-            : undefined
-        }
+        style={{
+          flex: 1,
+          ...(isChecked && { textDecoration: 'line-through', opacity: 0.4 }),
+        }}
       >
         {item.navn}
       </label>
